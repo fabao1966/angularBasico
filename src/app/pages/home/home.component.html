@@ -1,13 +1,32 @@
 
 <form [formGroup]="formulario">
-
+  @if (formulario.get("nome").hasError('required') && formulario.get("nome").touched ) {
+    <p class="alert alert-warning">O campo nome é obrigatório</p>
+  }
+  @if (formulario.get("nome").hasError('minlength') && formulario.get("nome").touched ) {
+    <p class="alert alert-warning">O campo nome precisa ter pelo menos três caracteres</p>
+  }
   <input type="text" name="nome"  formControlName="nome" placeholder="Nome" class="form-control">
 
 
+  @if (formulario.get("idade").hasError('required') && formulario.get("idade").touched ) {
+    <p class="alert alert-warning">O campo Idade é obrigatório</p>
+  }
+  @if (formulario.get("idade").hasError('min') && formulario.get("idade").touched ) {
+    <p class="alert alert-warning">O campo Idade precisa ser maior que zero</p>
+  }
+  @if (formulario.get("idade").hasError('max') && formulario.get("idade").touched ) {
+    <p class="alert alert-warning">O campo Idade precisa ser menor que 120</p>
+  }
   <input type="number"name="idade"  formControlName="idade" placeholder="Idade" class="form-control">
 
 
-
+  @if (formulario.get("cidade").hasError('required') && formulario.get("cidade").touched ) {
+    <p class="alert alert-warning">O campo cidade é obrigatório</p>
+  }
+  @if (formulario.get("cidade").hasError('minlength') && formulario.get("cidade").touched ) {
+    <p class="alert alert-warning">O campo cidade precisa ter pelo menos três caracteres</p>
+  }
   <input type="text" name="cidade" formControlName="cidade" placeholder="Cidade" class="form-control">
 
 
