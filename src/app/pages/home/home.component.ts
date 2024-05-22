@@ -17,7 +17,7 @@ import { Pessoa } from '../../models/Pessoa';
 export class HomeComponent {
   exibirTabela: boolean = false;
   btnCadastrar: boolean = true;
-
+  indice:number = -1;
   pessoas: Pessoa[] = [];
 
   formulario = new FormGroup({
@@ -35,6 +35,16 @@ export class HomeComponent {
     this.exibirTabela = true;
 
     console.table(this.pessoas);
+  }
+
+  selecionar(indice:number){
+    this.formulario.setValue({
+      nome: this.pessoas[indice].nome,
+      idade: this.pessoas[indice].idade,
+      cidade: this.pessoas[indice].cidade
+    });
+
+    this.btnCadastrar = false;
   }
 
 }
