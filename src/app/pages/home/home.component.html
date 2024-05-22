@@ -1,1 +1,42 @@
-<p>home works!</p>
+
+<form >
+
+  <input type="text"  formControlName="nome" placeholder="Nome" class="form-control">
+
+
+  <input type="number"  formControlName="idade" placeholder="Idade" class="form-control">
+
+
+
+  <input type="text"  formControlName="cidade" placeholder="Cidade" class="form-control">
+
+
+    <input  type="button" value="Cadastrar" class="btn btn-outline-primary" >
+    <input  type="button" value="Alterar" class="btn btn-outline-warning" >
+    <input type="button" value="Remover" class="btn btn-outline-danger">
+    <input type="button" value="Cancelar" class="btn btn-outline-secondary">
+
+
+
+</form>
+
+<table class="table" *ngIf="exibirTabela">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Cidade</th>
+      <th>Selecionar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> <button  class="btn btn-outline-dark">Selecionar</button> </td>
+    </tr>
+  </tbody>
+</table>
