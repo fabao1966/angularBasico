@@ -53,11 +53,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr >
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let pessoa of pessoas; index as indice ">
+      <td>{{ indice + 1 }}</td>
+      <td>{{ pessoa.nome }}</td>
+      <td>{{ pessoa.idade }}</td>
+      <td>{{ pessoa.cidade }}</td>
       <td> <button  class="btn btn-outline-dark">Selecionar</button> </td>
     </tr>
   </tbody>
