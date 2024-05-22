@@ -31,7 +31,7 @@
 
 
   @if (btnCadastrar) {
-    <input  type="button" value="Cadastrar" class="btn btn-outline-primary" [disabled]="formulario.get('nome').hasError('required') || formulario.get('nome').hasError('minlength') || formulario.get('idade').hasError('required') || formulario.get('idade').hasError('min') || formulario.get('idade').hasError('max') || formulario.get('cidade').hasError('required') || formulario.get('cidade').hasError('minlength') ">
+    <input (click)="cadastrar()" type="button" value="Cadastrar" class="btn btn-outline-primary" [disabled]="formulario.get('nome').hasError('required') || formulario.get('nome').hasError('minlength') || formulario.get('idade').hasError('required') || formulario.get('idade').hasError('min') || formulario.get('idade').hasError('max') || formulario.get('cidade').hasError('required') || formulario.get('cidade').hasError('minlength') ">
   }@else {
     <input  type="button" value="Alterar" class="btn btn-outline-warning" [disabled]="formulario.get('nome').hasError('required') || formulario.get('nome').hasError('minlength') || formulario.get('idade').hasError('required') || formulario.get('idade').hasError('min') || formulario.get('idade').hasError('max') || formulario.get('cidade').hasError('required') || formulario.get('cidade').hasError('minlength') ">
     <input type="button" value="Remover" class="btn btn-outline-danger">
