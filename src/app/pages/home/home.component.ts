@@ -15,6 +15,7 @@ import { FormsModule, FormGroup, ReactiveFormsModule, Validators, FormControl } 
 })
 export class HomeComponent {
   exibirTabela: boolean = false;
+  btnCadastrar: boolean = true;
 
   formulario = new FormGroup({
     nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
