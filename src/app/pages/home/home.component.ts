@@ -47,4 +47,11 @@ export class HomeComponent {
     this.btnCadastrar = false;
   }
 
+  alterar(){
+    this.pessoas[this.indice] = this.formulario.value as Pessoa;
+     console.log(this.formulario.value);
+    this.formulario.reset();
+    this.btnCadastrar = true;
+  }
+
 }
