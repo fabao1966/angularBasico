@@ -1,10 +1,12 @@
-<form>
-  <h1>Produtos</h1>
-  <input type="number" class="form-control" readonly >
-  <input type="text"   class="form-control" placeholder="Nome">
-  <input type="number" class="form-control" placeholder="Valor">
+<h1 class="titulo">Produtos</h1>
 
-  <input type="button" class="btn btn-outline-primary" value="Cadastrar" *ngIf="btnCadastrar">
+<form [formGroup]="formulario">
+
+  <input type="number" class="form-control" readonly  formControlName="id">
+  <input type="text"   class="form-control" placeholder="Nome" name="nome" formControlName="nome">
+  <input type="number" class="form-control" placeholder="Valor" name="valor" formControlName="valor">
+
+  <input type="button" class="btn btn-outline-primary" value="Cadastrar" *ngIf="btnCadastrar" (click)="cadastrar()">
   <input type="button" class="btn btn-outline-primary" value="Alterar"  *ngIf="!btnCadastrar">
   <input type="button" class="btn btn-outline-primary" value="Remover"  *ngIf="!btnCadastrar">
 </form>
@@ -21,7 +23,7 @@
   </thead>
 
   <tbody>
-      <tr *ngFor="let produto of produtos$|async; index as indice ">
+      <tr *ngFor="let produto of produtos; index as indice ">
           <td>{{ indice + 1 }}</td>
           <td>{{ produto.nome }}</td>
           <td>{{ produto.valor }}</td>
