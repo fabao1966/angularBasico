@@ -35,7 +35,7 @@
   }@else {
     <input type="button" value="Alterar" (click)="alterar()" class="btn btn-outline-warning" [disabled]="formulario.get('nome').hasError('required') || formulario.get('nome').hasError('minlength') || formulario.get('idade').hasError('required') || formulario.get('idade').hasError('min') || formulario.get('idade').hasError('max') || formulario.get('cidade').hasError('required') || formulario.get('cidade').hasError('minlength') ">
     <input type="button" value="Remover" (click)="remover()" class="btn btn-outline-danger">
-    <input type="button" value="Cancelar" class="btn btn-outline-secondary">
+    <input type="button" value="Cancelar" (click)="cancelar()" class="btn btn-outline-secondary">
   }
 </form>
 

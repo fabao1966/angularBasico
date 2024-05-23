@@ -60,4 +60,9 @@ export class HomeComponent {
     this.btnCadastrar = true;
   }
 
+  cancelar(){
+    this.formulario.reset();
+    this.btnCadastrar = true;
+  }
+
 }
