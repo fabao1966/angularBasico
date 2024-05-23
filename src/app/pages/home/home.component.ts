@@ -49,7 +49,13 @@ export class HomeComponent {
 
   alterar(){
     this.pessoas[this.indice] = this.formulario.value as Pessoa;
-     console.log(this.formulario.value);
+     //console.log(this.formulario.value);
+    this.formulario.reset();
+    this.btnCadastrar = true;
+  }
+
+  remover(){
+    this.pessoas.splice(this.indice, 1);
     this.formulario.reset();
     this.btnCadastrar = true;
   }
