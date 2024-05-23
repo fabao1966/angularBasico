@@ -21,11 +21,11 @@
   </thead>
 
   <tbody>
-      <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+      <tr *ngFor="let produto of produtos$|async; index as indice ">
+          <td>{{ indice + 1 }}</td>
+          <td>{{ produto.nome }}</td>
+          <td>{{ produto.valor }}</td>
+          <td> <button  class="btn btn-outline-primary">Selecionar</button> </td>
       </tr>
   </tbody>
 </table>

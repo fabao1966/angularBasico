@@ -1,12 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProdutoService } from '../../servico/produto.service';
+import { Observable } from 'rxjs';
+import { Produto } from '../../models/Produto';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-produtos',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './produtos.component.html',
   styleUrl: './produtos.component.css'
 })
 export class ProdutosComponent {
+
+  private produtoService = inject(ProdutoService);
+
+  produtos$ = new Observable<Produto[]>();
+
+  constructor(){
+    this.obterProdutos();
+  }
+
+  obterProdutos(){
+    this.produtos$ = this.produtoService.selecionar();
+  }
 
 }
