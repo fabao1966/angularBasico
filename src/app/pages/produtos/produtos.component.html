@@ -7,7 +7,7 @@
   <input type="number" class="form-control" placeholder="Valor" name="valor" formControlName="valor">
 
   <input type="button" class="btn btn-outline-primary" value="Cadastrar" *ngIf="btnCadastrar" (click)="cadastrar()">
-  <input type="button" class="btn btn-outline-primary" value="Alterar"  *ngIf="!btnCadastrar">
+  <input type="button" class="btn btn-outline-primary" value="Alterar"  *ngIf="!btnCadastrar" (click)="alterar()">
   <input type="button" class="btn btn-outline-primary" value="Remover"  *ngIf="!btnCadastrar">
 </form>
 
@@ -27,7 +27,7 @@
           <td>{{ indice + 1 }}</td>
           <td>{{ produto.nome }}</td>
           <td>{{ produto.valor }}</td>
-          <td> <button  class="btn btn-outline-primary">Selecionar</button> </td>
+          <td> <button  class="btn btn-outline-primary" (click)="selecionarProduto(indice)">Selecionar</button></td>
       </tr>
   </tbody>
 </table>

@@ -22,6 +22,7 @@ export class ProdutosComponent {
   //produtos$ = new Observable<Produto[]>();
   produtos: Produto[] = [];
   btnCadastrar: boolean = true;
+  indice:number = -1;
 
   constructor(){
     this.selecionar();
@@ -48,6 +49,24 @@ export class ProdutosComponent {
 
       this.formulario.reset();
     });
+  }
+
+  selecionarProduto(indice:number){
+    this.indice = indice;
+
+    this.formulario.setValue({
+      id: this.produtos[indice].id,
+      nome: this.produtos[indice].nome,
+      valor: this.produtos[indice].valor
+    });
+
+    this.btnCadastrar = false;
+  }
+
+  alterar(){
+    this.produtos[this.indice] = this.formulario.value as Produto;
+      this.formulario.reset();
+        this.btnCadastrar = true;
   }
 
 }

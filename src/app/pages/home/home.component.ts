@@ -38,6 +38,8 @@ export class HomeComponent {
   }
 
   selecionar(indice:number){
+    this.indice = indice;
+
     this.formulario.setValue({
       nome: this.pessoas[indice].nome,
       idade: this.pessoas[indice].idade,
