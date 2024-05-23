@@ -18,12 +18,13 @@ export class ProdutosComponent {
   private produtoService = inject(ProdutoService);
 
   produtos$ = new Observable<Produto[]>();
+  btnCadastrar: boolean = true;
 
   constructor(){
-    this.obterProdutos();
+    this.selecionar();
   }
 
-  obterProdutos(){
+  selecionar(){
     this.produtos$ = this.produtoService.selecionar();
   }
 

@@ -4,9 +4,9 @@
   <input type="text"   class="form-control" placeholder="Nome">
   <input type="number" class="form-control" placeholder="Valor">
 
-  <input type="button" class="btn btn-outline-primary" value="Cadastrar">
-  <input type="button" class="btn btn-outline-primary" value="Alterar">
-  <input type="button" class="btn btn-outline-primary" value="Remover">
+  <input type="button" class="btn btn-outline-primary" value="Cadastrar" *ngIf="btnCadastrar">
+  <input type="button" class="btn btn-outline-primary" value="Alterar"  *ngIf="!btnCadastrar">
+  <input type="button" class="btn btn-outline-primary" value="Remover"  *ngIf="!btnCadastrar">
 </form>
 
 <!-- TABELA -->
